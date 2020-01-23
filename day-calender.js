@@ -52,14 +52,12 @@ $(document).ready(function () {
         var textInput = $(this).siblings("input").attr("data");
         var textVal = $(this).siblings("input").val();
         localStorage.setItem(textInput, textVal);
-        var lsVal = localStorage.getItem(textInput);
-        $(this).siblings("input").text(lsVal);
+        var textVal = localStorage.getItem(textInput);
+        $(this).siblings("input").text(textVal);
     });
 
-    //updated width of time block span and changed btn text to "SAVE"
-    // Consider using fontawesome icon for save feature
-    $(".input-group-text").css("width", "100px");
-    $("button").text("SAVE"); // update with icon from font-awesome
 
+    $(".input-group-text").css("width", "100px");
+    $("button").text('Save'); 
 
 })
