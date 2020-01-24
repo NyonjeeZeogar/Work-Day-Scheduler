@@ -41,6 +41,7 @@ $(document).ready(function () {
         newTextInput.attr("data", "data-text" + index);
         newDiv.append(newBtn);
         newBtn.addClass("btn btn-outline-secondary");
+        newTextInput.val(localStorage.getItem("data-text" + index));
 
         /* END OF FOREACH()*/
     });
@@ -50,9 +51,8 @@ $(document).ready(function () {
         event.preventDefault();
 
         var textInput = $(this).siblings("input").attr("data");
-        var textVal = $(this).siblings("input").val();
+        var textVal = $(this).siblings("input")[0].value;;
         localStorage.setItem(textInput, textVal);
-        var textVal = localStorage.getItem(textInput);
         $(this).siblings("input").text(textVal);
     });
 
